@@ -1,0 +1,43 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+```{r}
+armando <- c(160.2,160.8,161.9,165.2,166.8)
+andrea<- c(199.1, 195.2, 194.2,192.2,190.1)
+anibal <- c(180.9, 181.2, 184.2, 183.2,182.1)
+josue <- c(170.1, 180.1,181.4,181.9, 180.1)
+jose <- c(190.0, 189.1, 188.3,187.4,186.4)
+
+Pesos <- c(armando,andrea,anibal, josue, jose)
+
+Matriz_Pesos<-matrix(Pesos, byrow = TRUE,nrow = 5)
+
+rownames(Matriz_Pesos) <- c("Armando", "Andrea", "Anibal", "Josue", "Jose")
+colnames(Matriz_Pesos) <- c("Enero", "Febrero", "Marzo","Abril", "Mayo")
+
+Prom_Col<- colMeans(Matriz_Pesos)
+Prom_filas<-rowMeans(Matriz_Pesos)
+
+matriz_Pesos_2<-rbind(Matriz_Pesos,Prom_Col)
+matriz_pesos_3<-cbind(matriz_Pesos_2, Prom_filas)
+
+matriz_pesos_3
+```
+
+
+
